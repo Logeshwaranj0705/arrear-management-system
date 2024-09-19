@@ -14,7 +14,12 @@ def read_excel_to_array(file_path):
     df = pd.read_excel(file_path)
     # Convert the DataFrame into a list of lists
     data = df.values.tolist()
+
     return data
+def header_read(file_path):
+    df = pd.read_excel(file_path)
+    header=df.columns
+    return header
 def columns_read():
     wb = openpyxl.load_workbook('Marks1.xlsx')
     ws = wb.active
@@ -45,29 +50,29 @@ async def main(file_path,exam):
     print("Process started")
     cols=columns_read()
     data = read_excel_to_array(file_path)
+    header=header_read(file_path)
     tasks = []
-    count_num=0
-
     for i in range(0, len(data)):
-        count = 0  
-        for j in range(2,cols-1):  
+        count = 0
+        subject=[]  
+        for j in range(2,cols-1):
             if int(data[i][j]) < 25:  # Assuming scores below 25 are considered arrears
+                subject.append(header[j]+'-'+str(data[i][j]))
                 count += 1
         if count >= 3:
             student_name = data[i][1]  # Assuming student name is in the second column
             phone_number = str(data[i][cols-1])  # Ensure phone number is a string
             ph_no = "+91" + phone_number
             message = f"Dear {student_name}, you have {count} arrears in {exam.upper()}. Please take necessary action."
+            for k in range(0,len(subject)):
+                message=message+"\n"+str(subject[k])
             tasks.append(send_sms_message(ph_no, message))
-            count_num += 1 
     await asyncio.gather(*tasks)
     after_process()
     print("Process completed")
-    return count_num
 
 # Flask web application setup
 app = Flask(__name__)
-
 def get_or_create_eventloop():
     try:
         return asyncio.get_event_loop()
@@ -89,6 +94,8 @@ def my_link1():
         file.save(os.path.join(os.getcwd(), 'Marks1.xlsx'))
         loop = get_or_create_eventloop()
         loop.run_until_complete(main('Marks1.xlsx',exam))
+        return "Messages sent successfully"
+    return "Messages not sent successfully"
 # Run the Flask application
 if __name__ == '__main__':
     app.run(debug=True)
