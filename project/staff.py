@@ -5,8 +5,8 @@ from twilio.rest import Client
 
 
 # Twilio account credentials
-account_sid ="AC9b24c5fcce5bf15d8731019c97f97c1b"
-auth_token ="8874dd92ee8440594a5a2aae7b849413"
+account_sid =""
+auth_token =""
 client = Client(account_sid, auth_token)
 # Function to read Excel file and convert to array
 def read_excel_to_array(file_path):
@@ -38,7 +38,7 @@ async def send_sms_message(ph_no, message):
     try:
         print(f"Sending message to {ph_no}...")
         message = client.messages.create(
-            from_='+18472428909',
+            from_='',
             to=f"{ph_no}",
             body=message
         )
