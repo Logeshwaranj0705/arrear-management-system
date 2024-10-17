@@ -51,7 +51,7 @@ async def send_sms_message(ph_no, message):
         print(f"Failed to send message to {ph_no}: {str(e)}")
 def process_hod_data(year, sem, exam, arrear):
     username = 'root'
-    password = 'log#9344'
+    password = ''
     host = 'localhost'
     # Establish a connection to the MySQL database
     cnx = mysql.connector.connect(user=username, password=password, host=host)
@@ -90,7 +90,7 @@ def process_hod_data(year, sem, exam, arrear):
     return data
 def clear_data(arrear,year,exam,sem):
     username = 'root'
-    password = 'log#9344'
+    password = ''
     host = 'localhost'
     # Establish a connection to the MySQL database
     cnx = mysql.connector.connect(user=username, password=password, host=host)
@@ -152,7 +152,7 @@ async def main(file_path, exam, year, sem):
     for i in range(0, len(data)):
         ws.append(data[i])  # Append each row of data as a list
         #mysql connectivity
-        cnx = mysql.connector.connect(user='root',password='log#9344',host='localhost')
+        cnx = mysql.connector.connect(user='root',password='',host='localhost')
         # Calculate arrear count
         count = 0
         subject = []  
