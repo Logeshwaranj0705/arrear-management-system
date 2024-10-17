@@ -11,7 +11,7 @@
         background-color: rgb(134, 4, 62);
     }
     
-    body { background-image: url('https://www.sathyabama.ac.in/sites/default/files/2020-01/LIBERAY.jpg') ; background-size: cover;background-repeat: no-repeat; 
+    body { background-image: url('https://www.sathyabama.ac.in/sites/default/files/inline-images/DJI_0105-New-Low.jpg') ; background-size: cover;background-repeat: no-repeat; 
     }
     
     .navbar {
@@ -110,10 +110,9 @@
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-12 ">
-                        <img class="rounded-circle mx-auto d-block mb-2" src="https://www.sathyabama.ac.in/sites/default/files/styles/large/public/2024-06/Revathy-Photo.jpeg?itok=XTteUzoA" height="200" width="200">
-                        <h3 class="text-center"><b>Dr.S.Revathy - IT
-                            M.E.,Ph.D.,<br>
-                            HOD</b></h3>
+                     <img class="rounded-circle mx-auto d-block mb-2" src="https://www.sathyabama.ac.in/sites/default/files/styles/large/public/2024-06/Revathy-Photo.jpeg?itok=XTteUzoA" height="200" width="200">
+                        <h3 class="text-center"><b>HEAD OF THE DEPARTMENT<br>
+                            Dr.S.Revathy</b></h3>
                             </div>
                             </div>
                             </div>
@@ -124,10 +123,9 @@
                                         <!-- Card for Marks Upload -->
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title text-center mb-4">DATA SHEET</h4>
                                                 <form action="/hod_page" method="post" enctype="multipart/form-data">
                                                 <div class="mb-3">
-                                                    <label for="marksSelect" class="form-label">Choose exam</label>
+                                                    <label for="marksSelect" class="form-label">Choose exam:</label>
                                                 <select class="form-select" id="marksSelect" name="form_sheet">
                                                         <option value="cae1">CAE-1</option>
                                                         <option value="cae2">CAE-2</option>
@@ -135,18 +133,17 @@
                                                     </select>
                                                     </div>
                                                     <div class="mb-3">
-                                                    <label for="marksSelect" class="form-label">No of Arrears</label>
-                                                    <select class="form-select" id="marksSelect" name="form_sheet">
-                                                            <option value="3 or more arrear">3 OR MORE ARREAR</option>
-                                                            <option value="three_arrear">THREE ARREAR</option>
-                                                            <option value="two_arrear">TWO ARREAR</option>
-                                                            <option value="one_arrear">ONE ARREAR</option>
-                                                            <option value="nil_arrear">NIL ARREAR</option>
+                                                    <label for="marksSelect" class="form-label">No of Arrears:</label>
+                                                    <select class="form-select" id="marksSelect" name="arrears">
+                                                            <option value="three_arrear">3-Arrear</option>
+                                                            <option value="two_arrear">2-Arrear</option>
+                                                            <option value="one_arrear">1-Arrear</option>
+                                                            <option value="nil_arrear">Nil-Arrear</option>
                                                         </select>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="marksSelect" class="form-label">Year</label>
-                                                            <select class="form-select" id="marksSelect" name="form_sheet">
+                                                            <label for="marksSelect" class="form-label">Year:</label>
+                                                            <select class="form-select" id="marksSelect" name="year">
                                                                     <option value="1-year">1-year</option>
                                                                     <option value="2-year">2-year</option>
                                                                     <option value="3-year">3-year</option>
@@ -154,22 +151,16 @@
                                                                 </select>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="marksSelect" class="form-label">Semester</label>
-                                                                    <select class="form-select" id="marksSelect" name="form_sheet">
-                                                                            <option value="sem-1">sem-1</option>
-                                                                            <option value="sem-2">sem-2</option>
-                                                                            <option value="sem-3">sem-3</option>
-                                                                            <option value="sem-4">sem-4</option>
-                                                                            <option value="sem-5">sem-5</option>
-                                                                            <option value="sem-6">sem-6</option>
-                                                                            <option value="sem-7">sem-7</option>
-                                                                            <option value="sem-8">sem-8</option>
+                                                                    <label for="marksSelect" class="form-label">Semester:</label>
+                                                                    <select class="form-select" id="marksSelect" name="sem">
+                                                                            <option value="even sem">Even Semester</option>
+                                                                            <option value="odd sem">Odd Semester</option>
                                                                 </select>
                                                         </div>
                                                 <!-- File Upload Input -->
                                                     <!-- Submit Button -->
                                                     <div class="text-center">
-                                                        <button class="btn btn-primary" id="submitButton">PROCEED</button>
+                                                        <button class="btn btn-primary" id="submitButton" name="proceed">PROCEED</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -181,7 +172,6 @@
     <footer class="p-3 mt-5">
         &copy; 2023 Sathyabama Institute of Science and Technology. All rights reserved.
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
     </script>
